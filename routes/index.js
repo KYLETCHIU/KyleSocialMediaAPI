@@ -1,12 +1,12 @@
-//Another Short js file, sweeeeeeet
-//Routes for thoughts and users
 const router = require("express").Router();
-const thoughtRoutes = require("./thoughtRoutes");
-const userRoutes = require("./userRoutes");
+const apiRoutes = require("./api");
 
+//sets up the api directory for smooth sailing
+router.use("/api", apiRoutes);
 
-router.use("/thoughts", thoughtRoutes);
-router.use("/users", userRoutes);
-
+router.use((req, res) => {
+    //404 Error for routes
+    res.status(404).send("<h1>404 Error!<h1>");
+});
 
 module.exports = router;
