@@ -1,0 +1,25 @@
+{
+    "name": "nosql-social-network-api",
+    "version": "1.0.0",
+    "description": "API's for a social media with Mongo database",
+    "main": "server.js",
+    "scripts": {
+      "test": "N/A",
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/KYLETCHIU/KyleSocialMediaAPI"
+    },
+    "author": "",
+    "license": "UNLICENSED",
+    "bugs": {
+      "url": "https://github.com/KYLETCHIU"
+    },
+    "homepage": "https://github.com/KYLETCHIU/KyleSocialMediaAPI",
+    "dependencies": {
+      "express": "^4.17.3",
+      "moment": "^2.29.1",
+      "mongoose": "^6.2.4"
+    }
+  }
