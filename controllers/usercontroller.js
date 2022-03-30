@@ -6,7 +6,8 @@ const userController = {
     getAllUsers(req, res) {
 
         User.find({})
-
+            .populate("thoughts")
+            .populate("friends")
             .then(dbUsers => res.json(dbUsers))
             .catch(err => {
 
@@ -21,7 +22,9 @@ const userController = {
         console.log("Getting user by ID",
             req.params)
         User.findOne({ id: req.params.userId })
-
+            //Might not need
+            .populate("thoughts")
+            .populate("friends")
             .then(dbUsers => res.json(dbUsers))
             .catch(err => {
 
@@ -65,7 +68,7 @@ const userController = {
     //Deleting Users by id
     deleteUserById(req, res) {
 
-        console.log("Deleting the User by their ID",
+        console.log("Deleting the user by their id",
             req.params.id)
         User.findOneAndDelete({ _id: req.params.id })
 
@@ -80,7 +83,7 @@ const userController = {
     //Adding to friends list
     addToFriendList(req, res) {
 
-        console.log("updating by adding a friend to the users friends list",
+        console.log("Adding Friend!",
             req.params.id)
         User.findOneAndUpdate({ _id: req.params.id }, { $addToSet: { friends: req.params.friendid } })
         
@@ -95,7 +98,7 @@ const userController = {
     //Removing users from friends list
     removeFromFriendList(req, res) {
 
-        console.log("updating by adding a friend to the users friends list",
+        console.log("Removing Friend!",
             req.params.id)
         User.findOneAndUpdate({ _id: req.params.id }, { $pull: { friends: req.params.friendid } })
 

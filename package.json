@@ -1,5 +1,5 @@
 {
-    "name": "nosql-social-network-api",
+    "name": "kylesocialmediaapi",
     "version": "1.0.0",
     "description": "API's for a social media with Mongo database",
     "main": "server.js",

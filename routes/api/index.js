@@ -1,8 +1,8 @@
 //Another Short js file, sweeeeeeet
 //Routes for thoughts and users
 const router = require("express").Router();
-const thoughtRoutes = require("./thoughtRoutes");
-const userRoutes = require("./userRoutes");
+const thoughtRoutes = require("./TRoutes");
+const userRoutes = require("./URoutes");
 
 
 router.use("/thoughts", thoughtRoutes);

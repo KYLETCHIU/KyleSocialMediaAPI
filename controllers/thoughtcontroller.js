@@ -19,7 +19,7 @@ const thoughtController = {
     //Thoughts by ID
     getThoughtById(req, res) {
 
-        console.log("Getting thought by id",
+        console.log("Getting thought by its id",
             req.params)
         Thought.findOne({ id: req.params.thoughtId })
 
@@ -34,7 +34,7 @@ const thoughtController = {
     //Creating New Thought
     createNewThought(req, res) {
 
-        console.log("Info incerted from frontend",
+        console.log("Info into frontend",
             req.body)
 
         var t = Thought.create(req.body)
@@ -61,7 +61,7 @@ const thoughtController = {
     //Updating Thoughts
     updateThought(req, res) {
 
-        console.log("Getting a Thought by Id",
+        console.log("Getting thought by its Id",
             req.params.Id)
         Thought.findOneAndUpdate(req.params.thoughtId)
 
@@ -76,7 +76,7 @@ const thoughtController = {
     //Remove Thoughts
     removeThought(req, res) {
 
-        console.log("Deleting thought by id",
+        console.log("Deleting thought by its id",
             req.params.Id)
         Thought.findOneAndDelete({ id: req.params.ThoughtId })
 
